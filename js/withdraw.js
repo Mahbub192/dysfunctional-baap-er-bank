@@ -11,10 +11,17 @@
 
 document.getElementById("btn-withdraw").addEventListener("click", function () {
   const newWithdrawAmount = getInputFieldValueById("withdraw-field");
-  const previousWithdrawTotal = getTextElementValueById("withdraw-total ");
+  console.log("new withdraw amount " + typeof newWithdrawAmount);
+
+  const previousWithdrawTotal = parseInt(getTextElementValueById("withdraw-total"));
+  console.log("previous withdraw total " + typeof(previousWithdrawTotal));
+
   const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
-  setTextElementValueById(withdraw - total, newWithdrawTotal);
-  const previousBalanceTotal = getTextElementValueById("balance-total");
+  console.log('new withdraw total ' +newWithdrawTotal);
+
+  setTextElementValueById("withdraw-total", newWithdrawTotal);
+  const previousBalanceTotal = parseInt(getTextElementValueById("balance-total"));
+  console.log('previous balance total ' +typeof(previousBalanceTotal));
   const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
   setTextElementValueById("balance-total", newBalanceTotal);
 });
